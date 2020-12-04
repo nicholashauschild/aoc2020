@@ -1,7 +1,5 @@
 package aoc2020.day1
 
-import aoc2020.processedInput
-
 fun main() {
     val input = processedInput()
 

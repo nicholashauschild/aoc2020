@@ -1,4 +1,4 @@
-package aoc2020
+package aoc2020.day1
 
 fun main() {
     val input = processedInput()
