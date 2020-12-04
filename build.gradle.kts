@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "1.4.10"
+    application
 }
 
 group = "org.example"
@@ -20,4 +21,10 @@ tasks {
     compileTestKotlin {
         kotlinOptions.jvmTarget = "1.8"
     }
+}
+
+val day: String by project
+val puzzle: String by project
+application {
+    mainClassName = "aoc2020.day${day}._${day}_${puzzle}Kt"
 }
