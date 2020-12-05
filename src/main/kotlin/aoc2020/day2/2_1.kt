@@ -1,12 +1,9 @@
 package aoc2020.day2
 
 fun main() {
-    val input = processedInput()
+    val pwDatabase = processedInput()
 
-    println(input.count { dbEntry ->
-        val policyDetails = dbEntry.policyDetails
-        val pw = dbEntry.plaintextPassword
-
+    println(pwDatabase.countValidEntries { pw, policyDetails ->
         val min = policyDetails.firstInt
         val max = policyDetails.secondInt
         val letter = policyDetails.letter

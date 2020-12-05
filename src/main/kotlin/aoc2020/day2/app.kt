@@ -3,10 +3,9 @@ package aoc2020.day2
 import aoc2020.BadInputException
 import aoc2020.processLines
 
-internal class CorporatePasswordPolicyDetails(
-    val firstInt: Int,
-    val secondInt: Int,
-    val letter: Char
+// data structures
+internal class PasswordDatabase(
+    val entries: List<PasswordDatabaseEntry>
 )
 
 internal class PasswordDatabaseEntry(
@@ -14,12 +13,21 @@ internal class PasswordDatabaseEntry(
     val plaintextPassword: String
 )
 
+internal class CorporatePasswordPolicyDetails(
+    val firstInt: Int,
+    val secondInt: Int,
+    val letter: Char
+)
 
+// functionality
+internal fun PasswordDatabase.countValidEntries(
+        action: (password: String, policyDetails: CorporatePasswordPolicyDetails) -> Boolean): Int {
+    return entries.count { action(it.plaintextPassword, it.policyDetails) }
+}
 
-
-
-internal fun processedInput(): List<PasswordDatabaseEntry> {
-    return processLines("input_2", ::createDatabaseEntry)
+// input processing
+internal fun processedInput(): PasswordDatabase {
+    return PasswordDatabase(processLines("input_2", ::createDatabaseEntry))
 }
 
 private fun createDatabaseEntry(input: String): PasswordDatabaseEntry {

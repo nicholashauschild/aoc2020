@@ -23,6 +23,7 @@ internal class ForestSpace(
     }
 }
 
+// functionality
 internal fun Forest.treesOnSlope(x: Int, y:Int): Int {
     var xCur = 0
     var trees = 0
@@ -35,8 +36,6 @@ internal fun Forest.treesOnSlope(x: Int, y:Int): Int {
         }
     return trees
 }
-
-
 
 // input processing
 internal fun processedInput() : Forest {
