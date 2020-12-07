@@ -12,9 +12,4 @@ class App5Test {
         Assertions.assertEquals(5, boardingPass.determineColumn())
         Assertions.assertEquals(357, boardingPass.determineSeatNum())
     }
-
-    @Test
-    fun testPuzzle2() {
-
-    }
 }
