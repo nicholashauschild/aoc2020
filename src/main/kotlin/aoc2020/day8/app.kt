@@ -86,7 +86,6 @@ internal fun BootCodeLine.evaluate(): StateUpdate {
 
 // input processing
 internal fun processedInput(): BootCodeListing {
-    var counter = 0
     return BootCodeListing(processLines("input_8", ::createBootCodeLine))
 }
 
